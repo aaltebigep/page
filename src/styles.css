@@ -1,0 +1,38 @@
+/* Tema */
+/* Gruvbox, (c) 2012, Pavel Pertsev <https://github.com/morhetz/gruvbox> */
+
+:root {
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  color-scheme: light dark;
+
+  --bg0: #fbf1c7;
+  --fg0: #3c3836;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg0: #282828;
+    --fg0: #ebdbb2;
+  }
+}
+
+/* Düzen */
+
+body {
+  display: flex;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  background: none var(--bg0);
+  color: var(--fg0);
+  font-family: var(--font-sans);
+}
+
+main {
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
+  margin: auto;
+  padding: 16px;
+}

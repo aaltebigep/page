@@ -1,0 +1,28 @@
+name: Sun
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - run: |
+          curl -fL -o makko -X GET \
+            'https://forge.starlightnet.work/Team/Makko/releases/download/3.0.0/makko-x86_64-linux?trans-rights=human-rights'
+          chmod +x makko
+          ./makko .
+
+      - uses: actions/setup-go@v6
+        with:
+          go-version: "^1.25"
+      - env:
+          PAGES_PASSWORD: ${{ secrets.PAGES_PASSWORD }}
+        run: |
+          go install codeberg.org/git-pages/git-pages-cli@latest
+          git-pages-cli https://preview.aaltebigep.org \
+            --password "$PAGES_PASSWORD" \
+            --upload-dir ./web

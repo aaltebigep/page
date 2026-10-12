@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+
+    {{#post}}
+      <title>{{title}}</title>
+      <meta name="description" content="{{description}}" />
+      <meta name="author" content="{{author}}" />
+
+      <meta property="og:title" content="{{title}}" />
+      <meta property="og:description" content="{{description}}" />
+      <meta property="og:site_name" content="{{website.title}}" />
+      <meta property="og:type" content="website" />
+    {{/post}}
+
+    <meta name="generator" content="https://makko.starlightnet.work" />
+
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#d79921" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#fabd2f" />
+
+    <link rel="stylesheet" type="text/css" media="all" href="/styles.css" />
+  </head>
+  <body>
+    {{#post}}
+      <main>
+        {{{body}}}
+      </main>
+    {{/post}}
+  </body>
+</html>
