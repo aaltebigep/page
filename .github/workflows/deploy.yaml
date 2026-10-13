@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - run: |
-          curl -fL -o makko -X GET \
+          curl -fL -o makko -X GET -H 'user-agent: aaltebigep' \
             'https://forge.starlightnet.work/Team/Makko/releases/download/3.0.0/makko-x86_64-linux?trans-rights=human-rights'
           chmod +x makko
           ./makko .
